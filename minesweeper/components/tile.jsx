@@ -7,11 +7,12 @@ class Tile extends React.Component{
 
     render(){
       // debugger
-      const tile = this.props.tile
+    //   const tile = this.props.tile;
+      const {tile} = this.props;
       if (tile.explored) {
         if (tile.bombed) {
           return ( <div>💣</div> );
-        } else if (tile.adjacentBombCount() > 0){
+        } else if (tile.adjacentBombCount()){ //0 is falsy so we can check here
           return ( <div>{tile.adjacentBombCount()}</div> )
         }
       } else if (tile.flagged) {

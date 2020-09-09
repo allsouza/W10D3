@@ -27,12 +27,16 @@ class Board extends React.Component{
     return (
       <div>
         {this.props.board.grid.map((row, idx1) =>{
-                    const tiles = row.map((tile, idx2) =>{
-                      return <div onClick={(e) => {this.handleClick(tile, e)}} className={this.classGenerator(tile)} key={idx2}><Tile tile={tile} updateGame={this.props.updateGame} /></div>;
-                    })
-                    return <div className="row" key={idx1}>{tiles}</div>
-                })} 
-            </div>
+            const tiles = row.map((tile, idx2) =>{
+                return (<div onClick={(e) => {this.handleClick(tile, e)}} 
+                    className={this.classGenerator(tile)} 
+                    key={idx2}>
+                    <Tile tile={tile} updateGame={this.props.updateGame} />
+                </div>);
+            })
+            return <div className="row" key={idx1}>{tiles}</div>
+        })} 
+        </div>
         )
     }
 }

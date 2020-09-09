@@ -41,8 +41,6 @@ class Game extends React.Component {
 
   restartGame() {
     this.setState({ board: new GameLogic.Board(9, 10) })
-    // this.state.board.generateBoard();
-    // this.setState({ board: this.state.board })
   }
 
   render() {
